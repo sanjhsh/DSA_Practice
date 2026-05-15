@@ -69,14 +69,20 @@ def _merge(left, right):
 
 
 # ============================================================
-# PROBLEMS
+# PROBLEMS  
 # ============================================================
 
 def problem_1(arr):
     """Sort Array with Bubble Sort"""
-    pass
-
-
+    for i in range(0,len(arr)):
+        swapped=False
+        for j in range(len(arr)-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+                swapped=True
+        if not swapped:
+            break
+    return arr
 def problem_2(arr):
     """Sort Array with Insertion Sort"""
     pass

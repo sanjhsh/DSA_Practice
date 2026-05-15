@@ -79,7 +79,7 @@ def problem_1(nums, target):
 
 def problem_2(s, t):
     """Valid Anagram - Check if strings are anagrams"""
-    pass
+    
 
 
 def problem_3(strs):
