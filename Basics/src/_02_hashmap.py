@@ -92,7 +92,7 @@ def problem_2(s, t):
         for j in t:
             count_j+=t.count(j)
 
-            if i==j:
+            if i==j:            
                 if count_i==count_j:
                     return True
                 else:

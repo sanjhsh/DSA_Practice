@@ -85,13 +85,14 @@ def problem_1(arr):
     return arr
 def problem_2(arr):
     """Sort Array with Insertion Sort"""
-    # for i in range(1,len(arr)-1):
-    #     key=arr[i]
-    # while j<key & j<(len(arr)-1):
-
-
-
-
+    for i in range(1,len(arr)):
+        key=arr[i]
+        j=i-1
+        while j>=0 and arr[j]>key:
+            arr[j+1]=arr[j]
+            j-=1
+        arr[j+1]=key
+    return arr
 
 def problem_3(arr):
     """Sort Array with Merge Sort"""
