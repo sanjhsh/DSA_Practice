@@ -110,28 +110,20 @@ def problem_3(arr, target):
     """Search Insert Position - Find target or insertion point"""
     low=0
     high=len(arr)-1
-    mid=high+low//2
 
-    while low<high:
-        if arr[mid]>target:
+    while low<=high:
+        mid=high+low//2
+        if arr[mid]==target:
+            return mid
+
+        elif arr[mid]>target:
             high=mid-1
 
-        elif arr[mid]<target:
+        else:
             low=mid+1
 
-        elif arr[i]==target:
-            return mid
-        for i in range(low,high):
-            if arr[i]==target:
-                return i
-                
-        else:
-            for i in range(0,len(arr)):
-                if arr[i]>target:
-                    arr[i]=arr[i+1]
-                    arr[i]=target
-            return arr
-        return -1
+    return low
+
 
 
 def problem_4(arr):
