@@ -128,8 +128,17 @@ def problem_3(arr, target):
 
 def problem_4(arr):
     """Peak Element - Find mountain peak efficiently"""
-    pass
-
+    low=0
+    high=len(arr)
+    mid=low+high//2
+    while low<=high:
+        if arr[mid]<arr[mid+1]:
+            low=mid+1
+        elif arr[mid]>arr[mid+1]:
+            high=mid-1
+        else:
+            return mid 
+    return low
 
 def problem_5(arr, target):
     """Count Occurrences - Count frequency using binary search"""
