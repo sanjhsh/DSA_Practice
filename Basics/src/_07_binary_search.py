@@ -129,15 +129,14 @@ def problem_3(arr, target):
 def problem_4(arr):
     """Peak Element - Find mountain peak efficiently"""
     low=0
-    high=len(arr)
-    mid=low+high//2
-    while low<=high:
+    high=len(arr)-1
+    while low<high:
+        mid=(low+high)//2
         if arr[mid]<arr[mid+1]:
             low=mid+1
-        elif arr[mid]>arr[mid+1]:
-            high=mid-1
+
         else:
-            return mid 
+             high=mid 
     return low
 
 def problem_5(arr, target):
