@@ -79,24 +79,12 @@ def problem_1(nums, target):
 
 def problem_2(s, t):
     """Valid Anagram - Check if strings are anagrams"""
-    if len(s)==len(t):
-        return True
-    count_i=0
-    count_j=0
-    for i in s:
-        # count+i+=1
-        # for j in range(0,len(s)-i-1):
-        #     if i == j:
-        #         count_j+=1
-        count_i+=s.count(i)
-        for j in t:
-            count_j+=t.count(j)
-
-            if i==j:            
-                if count_i==count_j:
-                    return True
-                else:
-                    return False
+    if len(s)!=len(t):
+        return False
+    for ch in s:
+        if s.count(ch)!=t.count(ch):
+            return False
+    return True
             
 
 
