@@ -95,7 +95,11 @@ def problem_3(strs):
 
 def problem_4(nums):
     """Contains Duplicate - Check if array has duplicates"""
-    pass
+
+    for ch in nums:
+        if nums.count(ch)>1:
+            return True
+    return False
 
 
 def problem_5(nums):
