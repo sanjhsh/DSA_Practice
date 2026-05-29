@@ -72,11 +72,16 @@ def problem_2(s):
 
 def problem_3(s):
     """Reverse String - Reverse array in-place"""
+    low=0
     array_len=len(s)
-    new_s=""
-    for i in range(array_len-1,-1,-1):
-        new_s+=s[i]
-    return new_s
+    high=len(s)-1
+    mid=(low+high)//2
+
+    for i in range(low,mid):
+        s[i],s[array_len-1]=s[array_len-1],s[i]
+        array_len-=1
+
+    
 
 def problem_4(nums):
     """Remove Duplicates - Remove duplicates from sorted array in-place"""
