@@ -97,7 +97,7 @@ def problem_3(strs):
         if key not in dict:
             dict[key]=[]
         dict[key].append(str)
-    print(type(dict.values()))
+    return list(dict.values())
 
 
 def problem_4(nums):
