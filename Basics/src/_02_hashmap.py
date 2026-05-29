@@ -90,7 +90,14 @@ def problem_2(s, t):
 
 def problem_3(strs):
     """Group Anagrams - Group strings that are anagrams"""
-    pass
+    dict={}
+    
+    for str in strs:
+        key="".join(sorted(str))
+        if key not in dict:
+            dict[key]=[]
+        dict[key].append(str)
+    print(type(dict.values()))
 
 
 def problem_4(nums):
@@ -99,7 +106,7 @@ def problem_4(nums):
     for ch in nums:
         if nums.count(ch)>1:
             return True
-    return False
+    return False    
 
 
 def problem_5(nums):
