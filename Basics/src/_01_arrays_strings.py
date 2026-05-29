@@ -100,12 +100,11 @@ def problem_5(nums, k):
     """Rotate Array - Rotate array right by k positions"""
     if len(nums)==0:
         return False
-    # for i in range(1,k):
-    #     nums[i]=nums[i+1]
-    #     if nums[i]==len(nums)-1:
-    #         nums[i]=nums[0]
-    # return nums
-    new_left_array=nums[k:]
-    new_right_array=nums[:k]
-    new_array=new_left_array+new_right_array
-    return new_array
+    k=k%len(nums)
+    for _ in range(k):
+        temp=nums[-1]
+        for j in range(len(nums)-1,0,-1):
+            nums[j]=nums[j-1]
+
+        nums[0]=temp
+    
