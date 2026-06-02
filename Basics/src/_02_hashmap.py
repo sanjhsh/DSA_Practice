@@ -126,4 +126,8 @@ def problem_7(s, t):
 
 def problem_8(s):
     """First Unique Character - Find first non-repeating character"""
-    pass
+    for i,ch in enumerate(s):
+        if s.count(ch)==1:
+            return i
+    return -1
+        
