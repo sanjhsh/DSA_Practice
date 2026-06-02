@@ -111,8 +111,13 @@ def problem_4(nums):
 
 def problem_5(nums):
     """Majority Element - Find element appearing > n/2 times"""
-    pass
-
+    
+    temp=nums[0]
+    for i in range(1,len(nums)-1):
+        ch=nums[i]
+        if nums.count(ch)>nums.count(temp):
+            temp=nums[i]
+    return temp
 
 def problem_6(ransom_note, magazine):
     """Ransom Note - Check if note can be formed from magazine letters"""
