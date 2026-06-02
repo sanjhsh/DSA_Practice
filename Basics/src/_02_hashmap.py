@@ -121,7 +121,15 @@ def problem_5(nums):
 
 def problem_6(ransom_note, magazine):
     """Ransom Note - Check if note can be formed from magazine letters"""
-    pass
+    if len(ransom_note)==0:
+        return True
+    elif len(ransom_note)>len(magazine):
+        return False
+    else:
+        for ch in ransom_note:
+            if ransom_note.count(ch)<=magazine.count(ch):
+                return True
+    return False
 
 
 def problem_7(s, t):
