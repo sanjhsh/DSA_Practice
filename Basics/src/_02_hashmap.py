@@ -134,7 +134,22 @@ def problem_6(ransom_note, magazine):
 
 def problem_7(s, t):
     """Isomorphic Strings - Check if strings follow consistent mapping"""
-    pass
+    mapping={}
+    used=set()
+    if len(s)!=len(t):
+        return False
+    
+    for i in range (0,len(s)):
+        if s[i] in mapping:
+            if mapping[s[i]]!=t[i]:
+                return False
+        else:
+            if t[i] in used:
+                return False
+            mapping[s[i]]=t[i]
+            used.add(t[i])
+    return True
+
 
 
 def problem_8(s):
