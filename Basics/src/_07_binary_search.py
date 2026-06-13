@@ -144,25 +144,59 @@ def problem_5(arr, target):
     """for first element"""
     low=0
     high=len(arr)-1
-    mid=(low+high)//2
     first_index
-
-    if target<arr[mid]:
-        high=mid-1
-    elif target>arr[mid]:
-        low=mid+1
-    else:
-        first_index=mid
-    first_index=low
-    
     last_index
-    if target<arr[mid]:
-        high=mid-1
-    elif target>arr[mid]:
-        low=mid+1
-    else:
-        last_index=mid
-    last_index=low
+    count=0
+    # if target<arr[mid]:
+    #     high=mid-1
+    # elif target>arr[mid]:
+    #     low=mid+1
+    # else:
+    #     first_index=mid
+    # first_index=low
+    
+    # last_index
+    # if target<arr[mid]:
+    #     high=mid-1
+    # elif target>arr[mid]:
+    #     low=mid+1
+    # else:
+    #     last_index=mid
+    # last_index=low
 
-    count = last_index-first_index+1
-    return count
+    # count = last_index-first_index+1
+    # return count
+
+    # while low<=high:
+    #     mid=(low+high)//2
+    #     if target<arr[mid]:
+    #         high=mid-1
+    #     elif target>arr[mid]:
+    #         low=mid+1
+    #     elif target==arr[mid]:
+    #         first_index=mid
+    # for i in range(len(arr),0,-1):
+    #     if target==arr[i]:
+    #         last_index=i
+    # count+=last_index+first_index+1
+    # return count
+    while low<=high:
+        mid=(low+high)//2
+        if target==arr[mid]:
+            if target==arr[mid-1]:
+                high=mid-1
+            elif target==arr[mid+1]:
+                low=mid+1
+            else:
+                first_index=mid
+                last_index=mid
+        elif target<arr[mid]:
+            high=mid-1
+        else:
+            low=mid+1
+        count+=(last_index-first_index)+1
+        return count
+
+
+
+            

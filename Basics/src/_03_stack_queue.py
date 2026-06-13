@@ -67,7 +67,6 @@ class Queue:
 
 def problem_1(s):
     """Valid Parentheses - Check if brackets are correctly matched"""
-    pass
 
 
 def problem_2():
