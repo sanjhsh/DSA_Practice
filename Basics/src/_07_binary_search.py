@@ -142,11 +142,6 @@ def problem_4(arr):
 def problem_5(arr, target):
     """Count Occurrences - Count frequency using binary search"""
     """for first element"""
-    low=0
-    high=len(arr)-1
-    first_index
-    last_index
-    count=0
     # if target<arr[mid]:
     #     high=mid-1
     # elif target>arr[mid]:
@@ -180,22 +175,36 @@ def problem_5(arr, target):
     #         last_index=i
     # count+=last_index+first_index+1
     # return count
+    low=0
+    high=len(arr)-1
+    first_index=-1
+
     while low<=high:
         mid=(low+high)//2
         if target==arr[mid]:
-            if target==arr[mid-1]:
-                high=mid-1
-            elif target==arr[mid+1]:
-                low=mid+1
-            else:
-                first_index=mid
-                last_index=mid
-        elif target<arr[mid]:
+            first_index=mid
             high=mid-1
-        else:
+        elif target>arr[mid]:
             low=mid+1
-        count+=(last_index-first_index)+1
-        return count
+        else:
+            high=mid-1
+    if first_index==-1:
+        return 0
+    low=0
+    high=len(arr)-1
+    last_index=-1
+    while low<=high:
+        mid=(low+high)//2
+
+        if target==arr[mid]:
+            last_index=mid
+            low=mid+1
+        elif target>arr[mid]:
+            low=mid+1
+        else:
+            high=mid-1
+    return last_index-first_index+1
+    
 
 
 
