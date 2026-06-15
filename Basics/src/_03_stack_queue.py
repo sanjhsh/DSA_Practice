@@ -67,7 +67,36 @@ class Queue:
 
 def problem_1(s):
     """Valid Parentheses - Check if brackets are correctly matched"""
-
+    if len(s)%2!=0:
+        return False
+    stack=[]
+    # len_of_array=len(s)//2
+    # forward_stack=[]
+    # for i in range(0,len_of_array-1):
+    #     forward_stack.append(i)
+    # reverse_stack=[]
+    # for i in range(len_of_array,len(s),-1):
+    #     reverse_stack.append(i)
+    # if forward_stack==reverse_stack:
+    #     return True
+    # return False
+    for i in s:
+        if i=="(":
+           stack.append(")")
+        elif i=="[":
+            stack.append("]")
+        elif i=="{":
+            stack.append("}")
+        elif i==")":
+            if stack.pop()!=")":
+                return False
+        elif i=="]":
+            if stack.pop()!="]":
+                return False
+        elif i=="}":
+            if stack.pop()!="}":
+                return False
+    return True
 
 def problem_2():
     """Min Stack - Track minimum element in O(1)"""
