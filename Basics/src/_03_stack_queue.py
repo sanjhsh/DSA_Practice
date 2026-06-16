@@ -100,13 +100,33 @@ def problem_1(s):
 
 def problem_2():
     """Min Stack - Track minimum element in O(1)"""
-    pass
+    pass        
 
 
 def problem_3(s):
     """Decode String - Expand nested bracket patterns"""
-    pass
+    current_state=0
+    stack=[]
+    char_count=0
+    result=""
+    poped_element=stack.pop()
+    if len(s)!=0:
+        for character in s:
+            if type(character) is int:
+                current_state=current_state
+            elif character=="[":
+                stack.append("[")
+            elif type(character) is char:
+                stack.append(character)
+                char_count+=1
+            elif character=="]":
+                for i in range(1,char_count):
+                    for j in range(1,current_state-1):
+                        result.append(poped_element+poped_element)
+                char_count=0
+        return result
 
+    return False
 
 def problem_4(heights):
     """Largest Rectangle in Histogram - Find max area rectangle"""
