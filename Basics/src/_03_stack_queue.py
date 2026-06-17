@@ -100,33 +100,51 @@ def problem_1(s):
 
 def problem_2():
     """Min Stack - Track minimum element in O(1)"""
-    pass        
+    class MinStack:
+        def __init__(self):
+            self.stack=[]
+            self.minStack=[]
+
+        def push(self,val):
+            self.stack.append(val) 
+            val=min(val,self.minStack[-1] if self.minStack else val)      
+            self.minStack.append(val)
+        def pop(self):
+            return self.stack.pop()
+            self.minStack.pop()
+        def top(self):
+            return self.stack[-1]
+
+        def getMin(self):
+            return self.minStack[-1]
+    return MinStack()
 
 
 def problem_3(s):
     """Decode String - Expand nested bracket patterns"""
-    current_state=0
-    stack=[]
-    char_count=0
-    result=""
-    poped_element=stack.pop()
-    if len(s)!=0:
-        for character in s:
-            if type(character) is int:
-                current_state=current_state
-            elif character=="[":
-                stack.append("[")
-            elif type(character) is char:
-                stack.append(character)
-                char_count+=1
-            elif character=="]":
-                for i in range(1,char_count):
-                    for j in range(1,current_state-1):
-                        result.append(poped_element+poped_element)
-                char_count=0
-        return result
+    # current_state=0
+    # stack=[]
+    # char_count=0
+    # result=""
+    # poped_element=stack.pop()
+    # if len(s)!=0:
+    #     for character in s:
+    #         if type(character) is int:
+    #             current_state=current_state
+    #         elif character=="[":
+    #             stack.append("[")
+    #         elif type(character) is char:
+    #             stack.append(character)
+    #             char_count+=1
+    #         elif character=="]":
+    #             for i in range(1,char_count):
+    #                 for j in range(1,current_state-1):
+    #                     result.append(poped_element+poped_element)
+    #             char_count=0
+    #     return result
 
-    return False
+    # return False
+
 
 def problem_4(heights):
     """Largest Rectangle in Histogram - Find max area rectangle"""
