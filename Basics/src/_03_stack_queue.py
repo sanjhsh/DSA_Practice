@@ -129,11 +129,11 @@ def problem_3(s):
     # poped_element=stack.pop()
     # if len(s)!=0:
     #     for character in s:
-    #         if type(character) is int:
+    #         if character>=0 and character<=0:
     #             current_state=current_state
     #         elif character=="[":
     #             stack.append("[")
-    #         elif type(character) is char:
+    #         elif type(character) is char:                                                      
     #             stack.append(character)
     #             char_count+=1
     #         elif character=="]":
@@ -144,7 +144,23 @@ def problem_3(s):
     #     return result
 
     # return False
+    num=0
+    current=""
+    stack=[]
+    for character in s:
+        if character.isdigit():
+            num=num*10+int(character)
+        elif character=="[":
+            stack.append((current,num))
+            current=""
+            num=0
+        elif character=="]":
+            prev_string,num=stack.pop()
+            current=prev_string+num*current
 
+        else:
+            current+=character
+    return current
 
 def problem_4(heights):
     """Largest Rectangle in Histogram - Find max area rectangle"""
