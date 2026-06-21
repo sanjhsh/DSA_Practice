@@ -164,25 +164,16 @@ def problem_3(s):
 
 def problem_4(heights):
     """Largest Rectangle in Histogram - Find max area rectangle"""
-    stack=[]
-    for height in heights:
-        left
-        left_row=heights.indexOf(height)-1
-        right
-        right_row=height.indexOf(height)+1
-        while height>=heights[left_row]:
-            left=left_row
-            left_row-=1
-        while height>=heights[right_row]:
-            right=right_row
-            right_row-=1
-        stack.append(left_row,right_row)
-    for stack in heights:
-        stack.pop()
-        area=heights.inndexOf(stack)*max(max,right_row-left_row-1)
-    return area
-
-
+    stack=[]git 
+    prev_smaller=-1
+    next_smaller=len(heights)-1
+    for i in range(0,len(heights)-1):
+        while heights[i]>=prev_smaller:
+            prev_smaller=heights[i]
+        while heights[i]>=next_smaller:
+            next_smaller=heights[i]
+        area=max(max,heights[i]*next_smaller-prev_smaller-1)
+    return max
 def problem_5():
     """Queue using Stacks - Implement FIFO with two LIFO stacks"""
     pass
