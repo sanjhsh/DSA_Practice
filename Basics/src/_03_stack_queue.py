@@ -224,13 +224,13 @@ def problem_4(heights):
                 max_area = max(max_area, area) 
             stack.append(i)
 
-    while stack:             # ← ye loop add karo!
-        j = stack.pop()
-        height = heights[j]
-        right = len(heights)
-        left = stack[-1] if stack else -1
-        width = right - left - 1
-        max_area = max(max_area, height * width)
+    # while stack:             # ← ye loop add karo!
+    #     j = stack.pop()
+    #     height = heights[j]
+    #     right = len(heights)
+    #     left = stack[-1] if stack else -1
+    #     width = right - left - 1
+    #     max_area = max(max_area, height * width)
 
     return max_area
 
