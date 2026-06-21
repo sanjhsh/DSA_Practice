@@ -164,16 +164,76 @@ def problem_3(s):
 
 def problem_4(heights):
     """Largest Rectangle in Histogram - Find max area rectangle"""
-    stack=[]git 
-    prev_smaller=-1
-    next_smaller=len(heights)-1
-    for i in range(0,len(heights)-1):
-        while heights[i]>=prev_smaller:
-            prev_smaller=heights[i]
-        while heights[i]>=next_smaller:
-            next_smaller=heights[i]
-        area=max(max,heights[i]*next_smaller-prev_smaller-1)
-    return max
+    # prev_smaller=-1
+    # next_smaller=len(heights)-1
+    # for i in range(0,len(heights)-1):
+    #     while heights[i]>=prev_smaller:
+    #         prev_smaller=heights[i]
+    #     while heights[i]>=next_smaller:
+    #         next_smaller=heights[i]
+    #     area=max(max,heights[i]*next_smaller-prev_smaller-1)
+    # return maxprev_smaller=-1
+    # next_smaller=len(heights)-1
+    # for i in range(0,len(heights)-1):
+    #     while heights[i]>=prev_smaller:
+    #         prev_smaller=heights[i]
+    #     while heights[i]>=next_smaller:
+    #         next_smaller=heights[i]
+    #     area=max(max,heights[i]*next_smaller-prev_smaller-1)
+    # return max
+    # prev_stack=[]
+    # next_stack=[]
+    # prev_value=heights[0]
+    # next_value=heights[len(heights)-1]
+    # for i in range(0,len(heights)-1):
+    #     prev_stack.append(0)
+    #     for j in range(i,1,-1):
+    #         if prev_value>j:
+    #             prev_stack.append((i))
+    #             prev_value=heights[i]
+    #         else:
+    #             stack.pop()
+    #     next_stack.append(heights[len(heights)-1])
+    #     for j in range(i,len(heights)-1):
+    #         if next_value>j:
+    #             next_stack.append((i))
+    #             next_value=heights[i]   
+    #         else:
+    #             stack.pop()
+    #     area=max(max,heights[i]*next_value-prev_value-1)
+    # return area
+
+
+
+    stack=[]
+    max_area=0
+    for i in range (0,len(heights)):
+
+        if len(stack)==0:
+            stack.append(i)
+        elif heights[i]>=heights[stack[-1]]:
+            stack.append(i)
+        else:
+            while stack and heights[i] < heights[stack[-1]]:
+                j=stack.pop()
+                height=heights[j]
+                right=i
+                left=stack[-1] if stack else -1
+                width=right-left-1
+                area=height*width
+                max_area = max(max_area, area) 
+            stack.append(i)
+
+    while stack:             # ← ye loop add karo!
+        j = stack.pop()
+        height = heights[j]
+        right = len(heights)
+        left = stack[-1] if stack else -1
+        width = right - left - 1
+        max_area = max(max_area, height * width)
+
+    return max_area
+
 def problem_5():
     """Queue using Stacks - Implement FIFO with two LIFO stacks"""
     pass
@@ -186,7 +246,7 @@ def problem_6(temperatures):
 
 def problem_7():
     """Recent Calls Counter - Track function calls in time window"""
-    pass
+    pass 
 
 
 def problem_8(height):
