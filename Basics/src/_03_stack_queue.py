@@ -242,16 +242,26 @@ def problem_5():
             self.stack1=[]
             self.stack2=[]   
         def push(self,element):
-            self.stack1.append(element)
-            while self.stack1:
-                self.stack1.pop()
-                self.stack2.append(self.stack1)    
+            self.stack1.append(element)   
+
         def pop(self):
+            if len(self.stack2)==0:
+                while self.stack1:
+                    j=self.stack1.pop()
+                    self.stack2.append(j)
             if len(self.stack2)!=0:
                 return self.stack2.pop()
 
         def peek(self):
-            return sself.tack1[-1]
+            if len(self.stack2) == 0:
+                while self.stack1:
+                    j = self.stack1.pop()
+                    self.stack2.append(j)
+
+            if len(self.stack2) != 0:
+                return self.stack2[-1]
+
+            
     return QueueOperations()
 
 def problem_6(temperatures):
