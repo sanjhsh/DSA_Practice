@@ -224,20 +224,35 @@ def problem_4(heights):
                 max_area = max(max_area, area) 
             stack.append(i)
 
-    # while stack:             # ← ye loop add karo!
-    #     j = stack.pop()
-    #     height = heights[j]
-    #     right = len(heights)
-    #     left = stack[-1] if stack else -1
-    #     width = right - left - 1
-    #     max_area = max(max_area, height * width)
+    while stack:             
+        j = stack.pop()
+        height = heights[j]
+        right = len(heights)
+        left = stack[-1] if stack else -1
+        width = right - left - 1
+        max_area = max(max_area, height * width)
 
     return max_area
 
 def problem_5():
     """Queue using Stacks - Implement FIFO with two LIFO stacks"""
-    pass
+    
+    class QueueOperations():
+        def __init__(self):
+            self.stack1=[]
+            self.stack2=[]   
+        def push(self,element):
+            self.stack1.append(element)
+            while self.stack1:
+                self.stack1.pop()
+                self.stack2.append(self.stack1)    
+        def pop(self):
+            if len(self.stack2)!=0:
+                return self.stack2.pop()
 
+        def peek(self):
+            return sself.tack1[-1]
+    return QueueOperations()
 
 def problem_6(temperatures):
     """Daily Temperatures - Find next warmer day for each day"""
