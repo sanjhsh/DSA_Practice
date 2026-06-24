@@ -267,14 +267,15 @@ def problem_5():
 def problem_6(temperatures):
     """Daily Temperatures - Find next warmer day for each day"""
     stack=[]
-    
     for i in range(0,len(temperatures)):
+        found=False
         for j in range(i+1,len(temperatures)):
             if temperatures[j]>temperatures[i]:
                 stack.append(j-i)
+                found=True
                 break
-            else:
-                stack.append(0)
+        if found==False:
+            stack.append(0)
     return stack
 
 
