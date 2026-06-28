@@ -281,7 +281,11 @@ def problem_6(temperatures):
 
 def problem_7():
     """Recent Calls Counter - Track function calls in time window"""
-    pass 
+    class PingCount():
+        def __init__(self):
+            self.t=t
+        def ping(self,t):
+            
 
 
 def problem_8(height):
