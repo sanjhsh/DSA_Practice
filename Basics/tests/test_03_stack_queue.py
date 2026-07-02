@@ -89,8 +89,8 @@ def test_problem_7():
         pytest.skip("Not implemented yet")
     
     assert result.ping(100) == 1
-    assert result.ping(2000) == 1
-    assert result.ping(3001) == 2
+    assert result.ping(2000) == 2
+    assert result.ping(3001) == 3
     
     assert result.ping(3100) == 3
 

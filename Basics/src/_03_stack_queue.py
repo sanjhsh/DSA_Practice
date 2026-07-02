@@ -281,19 +281,18 @@ def problem_6(temperatures):
 
 def problem_7():
     """Recent Calls Counter - Track function calls in time window"""
+    from collections import deque
     class RecentCounter():
         def __init__(self):
-            self.queue=[]
+            self.queue=deque()
         def ping(self,t):
-            for i in range (t-3000,t):
-                if t-3000>=i:
-                    self.queue.append(t)
-                if len(self.queue)!=0:
-                    self.queue.pop()
+            self.queue.append(t)
+            while len(self.queue)!=0 and t-3000>=self.queue[0]:
+                self.queue.popleft()
             return len(self.queue)
     return RecentCounter()      
 
 
 def problem_8(height):
     """Trapping Rain Water - Calculate trapped water between bars"""
-    pass
+    pass                                                                                 
