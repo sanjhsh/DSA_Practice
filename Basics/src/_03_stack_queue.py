@@ -295,4 +295,16 @@ def problem_7():
 
 def problem_8(height):
     """Trapping Rain Water - Calculate trapped water between bars"""
-    pass                                                                                 
+    trapped_water=0
+    for i in range(0,len(height)):
+        left_max=0
+        right_max=0
+        current_height=height[i]
+        for j in range(0,i):
+            if height[j]>left_max:
+                left_max=height[j]
+        for k in range(i,len(height)):
+            if height[k]>right_max :
+                right_max=height[k]
+        trapped_water+=min(left_max, right_max) - current_height                                                     
+    return trapped_water
