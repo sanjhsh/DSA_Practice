@@ -304,7 +304,7 @@ def problem_8(height):
             if height[j]>left_max:
                 left_max=height[j]
         for k in range(i,len(height)):
-            if height[k]>right_max :
+            if height[k]>right_max:
                 right_max=height[k]
-        trapped_water+=min(left_max, right_max) - current_height                                                     
+        trapped_water+=max(0,min(left_max, right_max)- current_height)                                                     
     return trapped_water
