@@ -96,7 +96,7 @@ def problem_2(arr):
 
 def problem_3(arr):
     """Sort Array with Merge Sort"""
-    pass
+    
 
 
 def problem_4(arr):

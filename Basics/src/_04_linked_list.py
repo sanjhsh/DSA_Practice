@@ -71,8 +71,15 @@ class LinkedList:
 
 def problem_1(head):
     """Reverse Linked List - Reverse nodes in-place"""
-    pass
-
+    prev=None
+    curr=head
+    while curr:
+        nxt=curr.nxt
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+        
 
 def problem_2(head):
     """Detect Cycle - Check for circular reference"""
