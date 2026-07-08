@@ -86,7 +86,7 @@ def problem_2(head):
     result=[]
     curr=head
     
-    while curr.next!=None:
+    while curr!=None:
         if curr not in result:
             result.append(curr)
         else:
