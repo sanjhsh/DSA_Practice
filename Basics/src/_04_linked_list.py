@@ -85,12 +85,11 @@ def problem_2(head):
     """Detect Cycle - Check for circular reference"""
     result=[]
     curr=head
-    not_visited=True
-    while not_visited:
-        if curr not in result :
-            result.append(curr.val)
+    
+    while curr.next!=None:
+        if curr not in result:
+            result.append(curr)
         else:
-            visited=False
             return True
         curr=curr.next
     return False
