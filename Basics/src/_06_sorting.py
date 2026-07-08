@@ -96,7 +96,15 @@ def problem_2(arr):
 
 def problem_3(arr):
     """Sort Array with Merge Sort"""
+    if len(arr) <= 1:
+        return arr
     
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    
+    return _merge(left, right)
+
 
 
 def problem_4(arr):
