@@ -83,14 +83,17 @@ def problem_1(head):
 
 def problem_2(head):
     """Detect Cycle - Check for circular reference"""
-    visited=[]
+    result=[]
     curr=head
-    while curr:
-        if curr not in visited :
-            visited.append(curr.val)
-        curr=head.next
-        return False
-    return True
+    not_visited=True
+    while not_visited:
+        if curr not in result :
+            result.append(curr.val)
+        else:
+            visited=False
+            return True
+        curr=curr.next
+    return False
 
 def problem_3(head):
     """Find Middle - Find center node using two pointers"""
