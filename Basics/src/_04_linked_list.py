@@ -96,9 +96,19 @@ def problem_2(head):
 
 def problem_3(head):
     """Find Middle - Find center node using two pointers"""
-    pass
-
-
+    slow=head
+    fast=head
+    length=0
+    while head:
+        length+=1
+        head=head.next
+    while fast and fast.next:
+        slow =slow.next
+        fast=slow.next.next
+    if length%2==0:
+        return slow.val,slow.next.val
+    return slow.val
+    
 def problem_4(head1, head2):
     """Merge Sorted Lists - Combine two sorted lists"""
     pass
