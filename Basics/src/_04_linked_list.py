@@ -99,14 +99,18 @@ def problem_3(head):
     slow=head
     fast=head
     length=0
-    while head:
-        length+=1
-        head=head.next
+    # while head:
+    #     length+=1
+    #     head=head.next
+    # while fast and fast.next:
+    #     slow=slow.next
+    #     fast=fast.next.next
+    # if length%2==0:
+    #     return slow,slow.next
+    # return slow
     while fast and fast.next:
-        slow =slow.next
-        fast=fast.next.next
-    if length%2==0:
-        return slowslow.next
+         slow=slow.next
+         fast=fast.next.next
     return slow
 
 def problem_4(head1, head2):
