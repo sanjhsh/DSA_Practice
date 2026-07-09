@@ -104,11 +104,11 @@ def problem_3(head):
         head=head.next
     while fast and fast.next:
         slow =slow.next
-        fast=slow.next.next
+        fast=fast.next.next
     if length%2==0:
-        return slow.val,slow.next.val
-    return slow.val
-    
+        return slowslow.next
+    return slow
+
 def problem_4(head1, head2):
     """Merge Sorted Lists - Combine two sorted lists"""
     pass
