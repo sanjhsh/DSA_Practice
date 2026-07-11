@@ -117,18 +117,24 @@ def problem_4(head1, head2):
     """Merge Sorted Lists - Combine two sorted lists"""
     curr1=head1
     curr2=head2
-    while curr1:
-        curr1=curr1.next
-        last1=curr1
-    last1=curr2
-    while curr1:
-        if curr1>curr1.next:
-            curr1.head,curr1.next=curr1.next,curr1.head
-    return curr1
+    # while curr1.next:
+    #     curr1=curr1.next
+    #     last1=curr1
+    # last1=curr2
+    # while curr1:
+    #     if curr1>curr1.next:
+    #         curr1.head,curr1.next=curr1.next,curr1.head
+    # return curr1
 
-
+    while curr1.next:
+        while curr1.val>=curr2.val:
+            curr2.next=curr1
+            curr1.next=curr2.next.next
+            curr2=curr2.next
+        curr1=curr2.next
+    return curr2
 def problem_5(head, n):
-    """Remove Nth Node From End - Delete node n positions from end"""
+    """Remove Nth Node From End - Delete node n positions from end"""   
     pass
 
 
