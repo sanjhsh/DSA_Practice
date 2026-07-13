@@ -128,7 +128,7 @@ def problem_4(head1, head2):
     # return curr1
 
     while curr1 and curr2:
-        if curr1.val>=curr2.val:
+        if curr1.val>curr2.val:
             merged_list=curr1
 
             curr2=curr2.next
