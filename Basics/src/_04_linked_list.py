@@ -129,11 +129,11 @@ def problem_4(head1, head2):
 
     while curr1 and curr2:
         if curr1.val<curr2.val:
-            merged_list.next=curr1.val
+            merged_list.next=curr1
 
-            curr2=curr2.next
-        curr1=curr2.next
-    return merged_list
+            curr1=curr1.next
+        curr2=curr2.next
+    return merged_list.next
 def problem_5(head, n):
     """Remove Nth Node From End - Delete node n positions from end"""   
     pass
