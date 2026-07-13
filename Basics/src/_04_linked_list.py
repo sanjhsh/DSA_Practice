@@ -117,7 +117,7 @@ def problem_4(head1, head2):
     """Merge Sorted Lists - Combine two sorted lists"""
     curr1=head1
     curr2=head2
-    merged_list=Node(val)
+    merged_list=Node(0)
     # while curr1.next:
     #     curr1=curr1.next
     #     last1=curr1
@@ -128,8 +128,8 @@ def problem_4(head1, head2):
     # return curr1
 
     while curr1 and curr2:
-        if curr1.val>curr2.val:
-            merged_list=curr1
+        if curr1.val<curr2.val:
+            merged_list.next=curr1.val
 
             curr2=curr2.next
         curr1=curr2.next
