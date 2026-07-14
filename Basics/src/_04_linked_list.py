@@ -146,13 +146,15 @@ def problem_4(head1, head2):
 def problem_5(head, n):
     """Remove Nth Node From End - Delete node n positions from end"""   
     count=0
+    curr=head
     while curr:
-        curr=head
         count+=1
-        curr.next
+        curr=curr.next
     iteration=count-n
     if iteration==0:
-        return head
+        curr=head
+        curr.next=curr.next.next
+        return curr
     else:
         curr=head
         n=0
