@@ -145,13 +145,15 @@ def problem_4(head1, head2):
     return merged_list.next
 def problem_5(head, n):
     """Remove Nth Node From End - Delete node n positions from end"""   
-    curr=head
     count=0
-    while count=n-1:
-        curr.next=curr.next.next
-        curr=curr.next
+    while curr:
+        curr=head
         count+=1
-    
+        curr.next
+    iteration=count-n
+    for i in range(1,n):
+        curr
+    return 
 
 def problem_6(head, x):
     """Partition List - Split around pivot value"""
