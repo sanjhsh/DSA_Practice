@@ -151,9 +151,17 @@ def problem_5(head, n):
         count+=1
         curr.next
     iteration=count-n
-    for i in range(1,n):
-        curr
-    return 
+    if iteration==0:
+        return head
+    else:
+        curr=head
+        n=0
+        for i in range(1,iteration-1):
+            n+=1
+            curr=curr.next
+            if n==iteration-1:
+                curr.next=curr.next.next
+    return head
 
 def problem_6(head, x):
     """Partition List - Split around pivot value"""
