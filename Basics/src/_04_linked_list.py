@@ -153,16 +153,13 @@ def problem_5(head, n):
     iteration=count-n
     if iteration==0:
         curr=head
-        curr.next=curr.next.next
-        return curr
+        head=curr.next
+        return head
     else:
         curr=head
-        n=0
-        for i in range(1,iteration-1):
-            n+=1
+        for i in range(0,iteration-1):
             curr=curr.next
-            if n==iteration-1:
-                curr.next=curr.next.next
+        curr.next=curr.next.next
     return head
 
 def problem_6(head, x):
