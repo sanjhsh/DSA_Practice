@@ -177,8 +177,8 @@ def problem_6(head, x):
             big_head.next=curr
             big_head=big_head.next
         curr=curr.next
-    small_list.next=big_list.next
-    return small_list
+    small_head.next=big_list.next
+    return small_list.next
 
 def problem_7(head):
     """Palindrome Linked List - Check if reads same forwards/backwards"""
