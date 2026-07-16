@@ -171,14 +171,14 @@ def problem_6(head, x):
     big_head=big_list
     while curr:
         if curr.val<x:
-            small_list.next=curr
+            small_head.next=curr
             small_head=small_head.next
         else:
-            big_list.next=curr
+            big_head.next=curr
             big_head=big_head.next
         curr=curr.next
     small_list.next=big_list.next
-    return small_list.next
+    return small_list
 
 def problem_7(head):
     """Palindrome Linked List - Check if reads same forwards/backwards"""
