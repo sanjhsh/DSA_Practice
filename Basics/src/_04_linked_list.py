@@ -170,13 +170,15 @@ def problem_6(head, x):
     big_list=Node(0)
     big_head=big_list
     while curr:
+        next_node=curr.next
+        curr.next=None
         if curr.val<x:
             small_head.next=curr
             small_head=small_head.next
         else:
             big_head.next=curr
             big_head=big_head.next
-        curr=curr.next
+        curr=next_node
     small_head.next=big_list.next
     return small_list.next
 
