@@ -164,8 +164,17 @@ def problem_5(head, n):
 
 def problem_6(head, x):
     """Partition List - Split around pivot value"""
-    pass
-
+    curr=head
+    small_list=Node(0)
+    big_list=Node(0)
+    while curr:
+        if curr.val<x:
+            small_list.next=curr
+        else:
+            big_list.next=curr
+        curr=curr.next
+    small_list.next=big_list.next
+    return small_list
 
 def problem_7(head):
     """Palindrome Linked List - Check if reads same forwards/backwards"""
