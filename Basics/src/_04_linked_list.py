@@ -193,4 +193,4 @@ def problem_8(head):
     while curr and curr.next:
         curr.val,curr.next.val=curr.next.val,curr.val
         curr=curr.next.next
-    return headx
+    return head
