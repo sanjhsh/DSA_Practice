@@ -184,9 +184,17 @@ def problem_6(head, x):
 
 def problem_7(head):
     """Palindrome Linked List - Check if reads same forwards/backwards"""
-    pass
-
-
+    curr =head
+    dummy_list=Node(0)
+    dummy_head=dummy_list
+    while curr:
+        next_node=curr.next
+        curr.next=None
+        if curr!=dummy_head :
+            dummy_head.next=curr
+            dummy_head=dummy_head.next
+        else:
+            dummy_head
 def problem_8(head):
     """Swap Nodes in Pairs - Swap adjacent nodes"""
     curr=head
