@@ -189,4 +189,8 @@ def problem_7(head):
 
 def problem_8(head):
     """Swap Nodes in Pairs - Swap adjacent nodes"""
-    pass
+    curr=head
+    while curr:
+        curr.val,curr.next.val=curr.next.val,curr.val
+        curr=curr.next.next
+    return curr
