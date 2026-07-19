@@ -198,19 +198,22 @@ def problem_7(head):
     curr =head
     slow=curr
     fast=curr
-    while curr:
-        nxt=curr.next
-        curr.next=prev
-        prev=curr
-        curr=nxt
-    second_half=prev
     while fast and fast.next:
         slow=slow.next
         fast=fast.next.next
     middle=slow
+    while middle:
+        nxt=middle.next
+        middle.next=prev
+        prev=middle
+        middle=nxt
+    second_half=prev
+    middle=slow
     while curr==middle and prev==middle:
-        if curr!=prev:
+        if curr.val!=prev.val:
             return False
+        curr=curr.next
+        prev=prev.next
     return True
 
 
