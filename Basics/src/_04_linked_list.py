@@ -194,14 +194,25 @@ def problem_7(head):
     #         dummy_head=dummy_head.next
     #     else:
     #         dummy_head
+    prev=None
     curr =head
     slow=curr
     fast=curr
+    while curr:
+        nxt=curr.next
+        curr.next=prev
+        prev=curr
+        curr=nxt
+    second_half=prev
     while fast and fast.next:
         slow=slow.next
         fast=fast.next.next
-        middle=slow
-    while 
+    middle=slow
+    while curr==middle and prev==middle:
+        if curr!=prev:
+            return False
+    return True
+
 
 def problem_8(head):
     """Swap Nodes in Pairs - Swap adjacent nodes"""
