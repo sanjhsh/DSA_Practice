@@ -83,15 +83,24 @@ def problem_1(head):
 
 def problem_2(head):
     """Detect Cycle - Check for circular reference"""
-    result=[]
-    curr=head
+    # result=[]
+    # curr=head
     
-    while curr!=None:
-        if curr not in result:
-            result.append(curr)
-        else:
-            return True
-        curr=curr.next
+    # while curr!=None:
+    #     if curr not in result:
+    #         result.append(curr)
+    #     else:
+    #         return True
+    #     curr=curr.next
+    # return False
+
+    slow=head
+    fast=head
+    while fast and fast.next:
+        slow=slow.next
+        fast=fast.next.next
+        if slow==fast:
+            return True  
     return False
 
 def problem_3(head):
@@ -209,7 +218,7 @@ def problem_7(head):
         middle=nxt
     second_half=prev
     middle=slow
-    while curr==middle and prev==middle:
+    while curr!=middle and prev!=middle:
         if curr.val!=prev.val:
             return False
         curr=curr.next
