@@ -170,6 +170,15 @@ def problem_5(head, n):
             curr=curr.next
         curr.next=curr.next.next
     return head
+    # slow=head
+    # for i in range(1,n):
+    #     slow=slow.next
+    # fast=head
+    # if slow!=None:
+    #     while fast:
+    #         slow=slow.next
+    #         fast=fast.next
+    # return slow
 
 def problem_6(head, x):
     """Partition List - Split around pivot value"""

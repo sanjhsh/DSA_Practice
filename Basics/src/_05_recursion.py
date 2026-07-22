@@ -43,7 +43,13 @@ def fibonacci(n, memo=None):
 
 def problem_1(x, n):
     """Power - Calculate x^n efficiently using divide & conquer"""
-    pass
+    power=1
+    for i in range(n):
+        if n==0:
+            power*=n*1
+        power*=problem_1(x,n)*problem_1(x,n)
+        n=n//2
+    return power
 
 
 def problem_2(arr, index=0):
