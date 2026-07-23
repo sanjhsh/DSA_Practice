@@ -46,9 +46,11 @@ def problem_1(x, n):
     power=1
     if n==0:
         return 1
-    n=n//2
-    power*=problem_1(x,n)*x**n
-    return power
+    half=problem(x,n//2)
+    if n % 2 == 0:
+        return half * half
+    else:
+        return x * half * half
 
 
 def problem_2(arr, index=0):
