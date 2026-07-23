@@ -47,7 +47,7 @@ def problem_1(x, n):
     for i in range(n):
         if n==0:
             power*=n*1
-        power*=problem_1(x,n)*problem_1(x,n)
+        power*=problem_1(x,n)*x**n
         n=n//2
     return power
 
