@@ -55,7 +55,12 @@ def problem_1(x, n):
 
 def problem_2(arr, index=0):
     """Sum of Array - Calculate total using linear recursion"""
-    pass
+    Sum=0
+    if len(arr)==0:
+        return Sum
+    Sum+=problem_2(arr,index=0)
+    arr.pop(0)
+    return Sum
 
 
 def problem_3(arr, index=0):
