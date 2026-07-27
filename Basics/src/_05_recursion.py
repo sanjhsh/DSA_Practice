@@ -43,24 +43,23 @@ def fibonacci(n, memo=None):
 
 def problem_1(x, n):
     """Power - Calculate x^n efficiently using divide & conquer"""
-    power=1
-    if n==0:
-        return 1
-    half=problem(x,n//2)
-    if n % 2 == 0:
-        return half * half
-    else:
-        return x * half * half
+    # power=1
+    # if n==0:
+    #     return 1
+    # half=problem_1(x,n//2)
+    # if n % 2 == 0:
+    #     return half * half
+    # else:
+    #     return x * half * half
 
 
 def problem_2(arr, index=0):
     """Sum of Array - Calculate total using linear recursion"""
-    Sum=0
-    if len(arr)==0:
-        return Sum
-    Sum+=problem_2(arr,index=0)
-    arr.pop(0)
-    return Sum
+
+    if index==len(arr):
+        return 0
+
+    return arr[index]+ problem_2(arr, index + 1)
 
 
 def problem_3(arr, index=0):
