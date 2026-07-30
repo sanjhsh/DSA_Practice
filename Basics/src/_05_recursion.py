@@ -54,6 +54,8 @@ def problem_1(x, n):
     if n == 0:
         return 1
     
+    if n < 0:
+        return 1 / problem_1(x, -n)
     half = problem_1(x, n // 2)
     
     if n % 2 == 0:
