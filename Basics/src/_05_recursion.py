@@ -51,8 +51,15 @@ def problem_1(x, n):
     #     return half * half
     # else:
     #     return x * half * half
-
-
+    if n == 0:
+        return 1
+    
+    half = problem_1(x, n // 2)
+    
+    if n % 2 == 0:
+        return half * half
+    else:
+        return half * half * x
 def problem_2(arr, index=0):
     """Sum of Array - Calculate total using linear recursion"""
 
