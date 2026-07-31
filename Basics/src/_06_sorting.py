@@ -113,7 +113,7 @@ def problem_4(arr):
     low=0
     mid=0
     high=len(arr)-1
-    for i in range(0,len(arr)-1):
+    while mid<=high:
         if arr[mid]==0:
             arr[low],arr[mid]=arr[mid],arr[low]
             low+=1
