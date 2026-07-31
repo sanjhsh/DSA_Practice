@@ -109,8 +109,22 @@ def problem_3(arr):
 
 def problem_4(arr):
     """Sort Colors - Partition array with three values (0, 1, 2)"""
-    pass
-
+    
+    low=0
+    mid=0
+    high=len(arr)-1
+    for i in range(0,len(arr)-1):
+        if arr[mid]==0:
+            arr[low],arr[mid]=arr[mid],arr[low]
+            low+=1
+            mid+=1
+        elif arr[mid]==1:
+            mid+=1
+        else:
+            arr[low],arr[high]=arr[high],arr[low]
+            high-=1
+            mid+=1
+        return arr
 
 def problem_5(arr1, arr2):
     """Merge Sorted Arrays - Combine two sorted arrays"""
