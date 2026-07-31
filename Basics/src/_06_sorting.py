@@ -121,10 +121,9 @@ def problem_4(arr):
         elif arr[mid]==1:
             mid+=1
         else:
-            arr[low],arr[high]=arr[high],arr[low]
+            arr[mid],arr[high]=arr[high],arr[mid]
             high-=1
-            mid+=1
-        return arr
+    return arr
 
 def problem_5(arr1, arr2):
     """Merge Sorted Arrays - Combine two sorted arrays"""
