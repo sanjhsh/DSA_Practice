@@ -76,8 +76,10 @@ def problem_3(arr, index=0):
     if len(arr)==0:
         return null
     curr=arr[0]
-    arr.pop[0]
+    remaining_max=problem_3(arr,index+1)
 
+    if curr>remaining_max:
+        curr=remaining_max
 
 
 def problem_4(arr, target, index=0):
