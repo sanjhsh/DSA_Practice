@@ -74,12 +74,11 @@ def problem_2(arr, index=0):
 def problem_3(arr, index=0):
     """Find Maximum - Recursively find largest element"""
     if index==len(arr)-1:
-        return arr[0]
-    curr=arr[0]
+        return arr[index]
+    curr=arr[index]
     remaining_max=problem_3(arr,index+1)
 
-    if curr>remaining_max:
-        curr=remaining_max
+    return max(curr,remaining_max)
 
 
 def problem_4(arr, target, index=0):
