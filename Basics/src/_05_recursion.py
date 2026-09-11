@@ -83,7 +83,8 @@ def problem_3(arr, index=0):
 
 def problem_4(arr, target, index=0):
     """Count Occurrences - Count element frequency recursively"""
-    pass
+    if index==len(arr)-1:
+        return 
 
 
 def problem_5(nums):

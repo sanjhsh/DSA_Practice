@@ -57,7 +57,7 @@ class BinaryTree:
             
             if node.left:
                 queue.append(node.left)
-            if node.right:
+            if node.right: 
                 queue.append(node.right)
         
         return result
@@ -78,7 +78,12 @@ class BinaryTree:
 
 def problem_1(root):
     """Maximum Depth - Find maximum distance from root to leaf"""
-    pass
+    if node is None:
+        return 0
+    left= problem_1(root.left)
+    right=problem_1(root.right)
+    
+    return 1+ max(left,right)
 
 
 def problem_2(root):
