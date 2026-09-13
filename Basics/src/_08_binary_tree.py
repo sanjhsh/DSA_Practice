@@ -86,10 +86,14 @@ def problem_1(root):
     return 1+ max(left,right)
 
 
+
 def problem_2(root):
     """Invert Binary Tree - Mirror the tree structure"""
-    pass
-
+    if node in None:
+        return 
+    for node:
+        node.left,node.right=node.right,node.left
+    return root
 
 def problem_3(p, q):
     """Same Tree - Check if two trees are identical"""
