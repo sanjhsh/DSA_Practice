@@ -89,11 +89,11 @@ def problem_1(root):
 
 def problem_2(root):
     """Invert Binary Tree - Mirror the tree structure"""
-    if node.left is None and node.rigth is None:
+    if root is None:
         return 
-    node=problem_2(root.left)
-    node=problem_2(root.right)
-    node.left,node.right=node.right,node.left
+    problem_2(root.left)
+    problem_2(root.right)
+    root.left,root.right=root.right,root.left
     return root
 
 def problem_3(p, q):
