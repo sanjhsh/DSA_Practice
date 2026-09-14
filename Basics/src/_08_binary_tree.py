@@ -78,7 +78,7 @@ class BinaryTree:
 
 def problem_1(root):
     """Maximum Depth - Find maximum distance from root to leaf"""
-    if node is None:
+    if root is None:
         return 0
     left= problem_1(root.left)
     right=problem_1(root.right)
@@ -89,10 +89,11 @@ def problem_1(root):
 
 def problem_2(root):
     """Invert Binary Tree - Mirror the tree structure"""
-    if node in None:
+    if node.left is None and node.rigth is None:
         return 
-    for node:
-        node.left,node.right=node.right,node.left
+    node=problem_2(root.left)
+    node=problem_2(root.right)
+    node.left,node.right=node.right,node.left
     return root
 
 def problem_3(p, q):
