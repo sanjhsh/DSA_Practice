@@ -98,7 +98,15 @@ def problem_2(root):
 
 def problem_3(p, q):
     """Same Tree - Check if two trees are identical"""
-    pass
+    if p or q is None:
+        return
+    array_1=[]
+    array_2=[]
+    node_1=problem_1(p.left)
+    array_1.push(node_1)
+    node_2=problem_2(q.left)
+
+
 
 
 def problem_4(root):
